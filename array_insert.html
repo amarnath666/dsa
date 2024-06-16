@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="position" />
+    <input type="text" id="el" />
+    <button onclick="amarnath()">add element</button>
+    <script>
+        
+
+        function amarnath () {
+            let data = [45, 85, 69, 25, 66]
+            let position = document.getElementById("position").value;
+            let newEl = document.getElementById("el").value;
+            console.warn(data);
+
+            for(i=data.length - 1; i >= 0; i--) {
+                if (i >= position) {
+                    data[ i +1 ] = data[i];
+                    if (i == position) {
+                        data[i] = newEl;
+                }
+                }
+            }
+        }
+        // let newEl = 80;
+        // let position = 2;
+        // console.warn(data)
+        // for (let i=data.length-1; i>=0; i--){
+        //     console.log(data[i]);
+        //     if (i>=position) {
+        //         data[i+1] = data[i]
+        //         if(i == position) {
+        //             data[i] = newEl;
+        //         }
+        //     }
+        // }
+        // console.warn(data)
+    </script>
+</body>
+</html>
