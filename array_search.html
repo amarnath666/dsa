@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input placeholder="enter number" id="item" type="number" />
+    <button onclick="serachElm()">Search</button>
+    <script>
+        // let data = [10, 20, 30, 40, 50, 20];
+        // let item = 40;
+        // let index = undefined;
+
+        // for (i = 0; i < data.length; i++) {
+        //     if (data[i] === item) {
+        //         index = i
+        //     }
+        //     console.warn(index);
+        // }
+
+        function serachElm() {
+            let data = [10, 20, 30, 40, 50, 20];
+            let item = document.getElementById("item").value;
+            item = parseInt(item)
+            let index = undefined;
+            for (i=0; i<data.length; i++) {
+                if (data[i] === item) {
+                    index = i;
+                }
+            }
+            console.log(index);
+        }
+    </script>
+</body>
+
+</html>

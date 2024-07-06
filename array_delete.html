@@ -6,16 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-
+    <input type="number" id="position" placeholder="enter position" />
+    <button onclick="removeElm()">Remove Element</button>
     <script>
-        let data = [12, 52, 63, 58, 96];
-        let position = 3;
-        for (i=position; i<data.length - 1; i++) {
-           data[i] = data[i + 1];
+        // let data = [12, 52, 63, 58, 96];
+        // let position = 3;
+        // for (i=position; i<data.length - 1; i++) {
+        //    data[i] = data[i + 1];
             
+        // }
+        // data.length = data.length-1;
+        // console.warn(data);
+
+        function removeElm() {
+            let data = [1, 2, 3, 4, 5]
+            let position = document.getElementById("position").value
+            position = parseInt(position)
+            for (i=position; i<data.length-1; i++) {
+                data[i] = data[i + 1];
+            }
+            data.length = data.length - 1;
+            console.warn(data)
         }
-        data.length = data.length-1;
-        console.warn(data);
     </script>
 </body>
 </html>
