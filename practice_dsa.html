@@ -7,28 +7,23 @@
 </head>
 <body>
     <script>
-        function twoSum(nums, target) {
-    let map = new Map();
-    
-    for (let i = 0; i < nums.length; i++) {
-        let num1 = nums[i]
-        let complement = target - nums[i];
-        
-        if (map.has[complement] ) {
-            return [num1, i];
+     var removeElement = function(nums, val) {
+        let i, k=0;
+    for (let i=0; i < nums.length; i++) {
+        if(nums[i] != val) {
+            nums[k] = nums[i];
+            console.log(k)
+            k++;
+        }
             
         }
-        map.set(num1, i);
+        return k;
     }
-    
-    return [];
-}
 
-// Example usage
-const nums = [2, 7, 11, 15];
-const target = 9;
-console.log(twoSum(nums, target)); // Output: [0, 1]
 
+let val = 3;
+let nums = [3,2,2,3];
+removeElement(nums,val);
     </script>
 </body>
 </html>
