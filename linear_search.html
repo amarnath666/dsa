@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        function linearSearch  () {
+            let data = [15, 25, 89, 51, 63, 41, 5];
+        // let find = 89;
+        let pos = undefined;
+        let find = document.getElementById("elm").value;
+            for (i=0; i<data.length; i++) {
+            if (data[i] == find) {
+                pos = i;
+                break;
+            }
+        }
+        console.log(pos)
+        }
+
+   
+    </script>
+    <input placeholder="enter element" type="number" id="elm" />
+    <button onclick="linearSearch()">Search</button>
+</body>
+</html>

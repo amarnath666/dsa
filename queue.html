@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let queue = [];
+        let maxSize = 5;
+        let currentSize = queue.length;
+
+        function enqueue() {
+            if (currentSize >= maxSize) {
+                alert("max reached")
+            } else {
+                let newVal = document.getElementById("qEl").value;
+                queue[currentSize] = newVal;
+                currentSize++;
+                document.getElementById("qEl").value = "";
+            }
+        }
+
+        function dequeue () {
+            for (let i =0; i<queue.length; i++) {
+                queue[i] = queue[i+1];
+            }
+            currentSize--;
+            queue.length = currentSize;
+        }
+
+        function display() {
+            console.warn(queue);
+        }
+
+        function front () {
+            if (!isEmpty()) {
+                console.log(queue[0])
+            } else {
+                alert("array is empty")
+            }
+        }
+
+        function rear () {
+            if (!isEmpty()) {
+                console.log(queue[currentSize-1])
+            } else {
+                alert("queue is already empty")
+            }
+        }
+
+        function isEmpty () {
+            if(currentSize<=0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        
+
+        enqueue(20);
+        display();
+    </script>
+</body>
+    <input placeholder="enter element" id="qEl" />
+    <button onclick="enqueue()">Add element</button>
+    <button onclick="dequeue()">Delete Element</button>
+    <button onclick="front()">Front</button>
+    <button onclick="rear()">Rear</button>
+</html>

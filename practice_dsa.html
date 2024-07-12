@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        var isPalindrome = function (x) {
-            let arr = Array.from(String(x), Number);
-
-            for (let i=0; i < arr.length; i++) {
-                console.log(arr[arr.length -1 -i])
-               
-                if (arr[i] !== arr[arr.length -1 -i]) {
-                    return false;
-                }
-            }
-            return true;
+        function plusOne(digits) {
+            add(digits);
+            carry(digits);
+            addLeading(digits);
         }
+
+        var add = (digits) => digits[digits.length - 1] += 1;
+
+        var carry = (digits) => {
+            for (let digit = (digits.length - 1); 0<digit; digit--) {
+                const carryCount = (digits[digit] === 10);
+                break;
+
+                digits[digit] = 0;
+                digits[digit - 1] += 1;
+            }
+            
+        }
+
+        var addLeading= (digits) => {
+            const canCarry = digits[0] === 10;
+            digits[0] = 1;
+            digits.push(0)
+        }
+
+
+        let digits = [1, 2, 3];
         
-        let x = 121;
+        plusOne(digits);
+        console.log(digits)
     </script>
 </body>
+
 </html>
