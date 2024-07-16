@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function palindrome (str1) {
+            let start = 0;
+            let end = str1.length - 1;
+
+            while (end>start) {
+                if (str1[start] != str1[end]) {
+                    return false;
+                }
+                start++;
+                end--;
+            }
+            return true;
+        }
+        
+        console.log(palindrome ("level"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let data = "level";
+        let strObj = {};
+        let maxKey = "";
+
+        for (i = 0; i < data.length; i++) {
+            // console.log(strObj[data[i]])
+            if (!strObj[data[i]]) {
+                strObj[data[i]] = 0;
+            }
+            strObj[data[i]]++;
+
+            if (maxKey == "" || strObj[data[i]] > strObj[maxKey]) {
+                maxKey = data[i];
+            }
+        }
+
+        console.log(maxKey)
+
+
+
+    </script>
+</body>
+
+</html>

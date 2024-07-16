@@ -9,36 +9,35 @@
 
 <body>
     <script>
-        function plusOne(digits) {
-            add(digits);
-            carry(digits);
-            addLeading(digits);
-        }
 
-        var add = (digits) => digits[digits.length - 1] += 1;
-
-        var carry = (digits) => {
-            for (let digit = (digits.length - 1); 0<digit; digit--) {
-                const carryCount = (digits[digit] === 10);
-                break;
-
-                digits[digit] = 0;
-                digits[digit - 1] += 1;
+        function merge(nums1, m, nums2, n) {
+            for (let i = m, j = 0; j < n; i++, j++) {
+                nums1[i] = nums2[j];
             }
-            
-        }
 
-        var addLeading= (digits) => {
-            const canCarry = digits[0] === 10;
-            digits[0] = 1;
-            digits.push(0)
-        }
+            for (let i = 0; i < nums1.length; i++) {
+                let minId = i;
+                for (let j = i + 1; j < nums1.length; j++) {
+                    if (nums1[minId] > nums1[j]) {
+                        minId = j
+                    }
+                }
+                let temp = nums1[minId];
+                // nums1[minId] = nums1[i];
+                nums1[i] = temp;
+            }
+        };
+        let nums1 = [1, 2, 3, 0, 0, 0];
+        let m = 3;
+        let nums2 = [2, 5, 6];
+        let n = 3;
+
+        merge(nums1, m, nums2, n);
+        console.log(nums1)
 
 
-        let digits = [1, 2, 3];
-        
-        plusOne(digits);
-        console.log(digits)
+
+
     </script>
 </body>
 

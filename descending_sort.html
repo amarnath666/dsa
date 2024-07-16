@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let data = [12, 52, 5, 41, 8, 85];
+
+        function sort(data) {
+            let minId;
+
+            for (i = 0; i < data.length; i++) {
+                minId = i;
+                for (j = i + 1; j < data.length; j++) {
+                    if (data[j] > data[minId]) {
+                        minId = j;
+                    }
+                }
+
+                let temp = data[minId];
+                data[minId] = data[i];
+                data[i] = temp;
+            }
+        }
+
+        sort(data);
+        console.log(data);
+    </script>
+</body>
+
+</html>
